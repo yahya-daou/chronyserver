@@ -14,7 +14,7 @@ data:
     # This directive specify the location of the file containing ID/key pairs for
     # NTP authentication.
     #keyfile /etc/chrony/chrony.keys
-    server ntp.ovh.net  iburst
+    server 0.fr.pool.ntp.org  iburst
     # This directive specify the file into which chronyd will store the rate
     # information.
     #driftfile /var/lib/chrony/chrony.drift
