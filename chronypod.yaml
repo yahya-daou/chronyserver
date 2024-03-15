@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: chrony-pod
+  name: chrony-pod1
 spec:
   containers:
   - name: chrony-container
