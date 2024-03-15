@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: chrony-pod
+spec:
+  containers:
+  - name: chrony-container
+    image: yahyadaoudi/chronyserver3:latest
+    ports:
+    - containerPort: 123
+      protocol: UDP
+    command: ["chronyd", "-d"]
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/chrony/chrony.conf
+      subPath: chrony.conf
+    securityContext:
+      capabilities:
+        add:
+        - SYS_TIME   
+        - SYS_RESOURCE
+  volumes:
+  - name: config-volume
+    configMap:
+      name: chrony-config
+
